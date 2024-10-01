@@ -1,1 +1,14 @@
-Hello this is Favian
+Hello this is favian 
+
+what was my role?
+database manager 
+
+what are your responsibilities of my role ?
+to design the user.json file and i got to ensure that it works correctly with the system
+
+what did i work on today ?
+
+i research some good points of how to do the database and maked my branch.
+
+
+
