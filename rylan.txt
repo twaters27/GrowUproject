@@ -1,1 +1,11 @@
-hello from rylan
+1. My role is to be a Design Specialist
+
+2.My responsibilities for my role is to be the main designer/front-end developer by helping add colors/nav bars/ect
+
+3. Today I worked on creating my access token and tried to add a icon to the google tab
+
+4. The biggest challenge today was to create my acess token and make it my own because I forgot most of the steps
+
+5. My goals for the project is to help as much as I can for the design aspect for the project
+
+6. Help design the base of the websites
