@@ -1,0 +1,11 @@
+My role is backend developer.
+
+My responsibiliies are the back end of the project, 90% of it being in the server and js files.
+
+I mainly worked on planning what the webiste would look like, worked on some of the index.js file, and helped my teammates get their git and local files set up.
+
+The biggest challeenge today was getting everyone set up with their local files as we all had to make tokens and git clone into our files.
+
+My goals for the project are to have a fully functional webpage(s) with 0 errors in the code.
+
+I will mainly work on getting the index.js file set up, so that my teammates can see their webpages and work on them without having to do it blindy.
