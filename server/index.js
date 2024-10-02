@@ -2,6 +2,14 @@ const express = require('express');
 const path = require('path');
 const fs = require('fs').promises;
 const {check, validationResult} = require('express-validator');
+var loginValidate = [
+    check('email', 'Username must be an email').isEmail().trim().escape().normalizeEmail(),
+    check('password').isLength({min:8})
+    .withMessage('Password must be at least 8 characters')
+    .matches('[0-9').withMessage('Password must contain a number')
+    .matches('[A-Z]').withMessage("Password must contain a uppercase letter").trim().escape()];
+
+
 
 const app = express();
 
@@ -34,10 +42,16 @@ app.get('/users', async(req,res) => {
 
 app.get ('/signIn', (req,res) => {
     res.sendFile('pages/form.html', {root:serverPublic});
+    
 
 });
-app.post('/submit-make', async(req,res)=>{
+app.post('/submit-make', loginValidate, async(req,res)=>{
     try{
+        const errors = validationResult(req);
+        if(!errors.isEmpty()){
+            return res.status(422).json({errors:errors.array});
+        }else{
+
         const {email, password} = req.body;
         let users = [];
         try {
@@ -56,6 +70,7 @@ app.post('/submit-make', async(req,res)=>{
         }
         await fs.writeFile(dataPath, JSON.stringify(users,null,2));
         res.redirect('/signIn');
+    }
     } catch (error){
         console.error('Error processing form:', error);
         res.status(500).send("An error occured while processing your submission")
@@ -64,8 +79,13 @@ app.post('/submit-make', async(req,res)=>{
 
 app.put('/update-user/:currentEmail/:currentPassword', async (req,res)=> {
 try {
+    const errors = validationResult(req);
+    
+
+    
     const {currentEmail, currentPassword} = req.params;
     const { newEmail, newPassword} = req.body;
+    
     console.log('Current user:', { currentEmail, currentPassword });
         console.log('New user data:', { newEmail, newPassword });
     const data = await fs.readFile(dataPath, 'utf8');
@@ -83,6 +103,7 @@ try {
 
         res.status(200).json({message: `You sent ${newEmail} and ${newPassword}`});
     }
+
 } catch (error){
     console.error("Error updating user:", error);
     res.status(500).send("An error occurred while updating the user.");
