@@ -41,7 +41,7 @@ app.get('/users', async(req,res) => {
 });
 
 app.get ('/signIn', (req,res) => {
-    res.sendFile('pages/form.html', {root:serverPublic});
+    res.sendFile('pages/signIn.html', {root:serverPublic});
     
 
 });
@@ -69,7 +69,7 @@ app.post('/submit-make', loginValidate, async(req,res)=>{
             users.push(user);
         }
         await fs.writeFile(dataPath, JSON.stringify(users,null,2));
-        res.redirect('/signIn');
+        res.redirect('/user');
     }
     } catch (error){
         console.error('Error processing form:', error);
@@ -77,11 +77,9 @@ app.post('/submit-make', loginValidate, async(req,res)=>{
     }
 });
 
+
 app.put('/update-user/:currentEmail/:currentPassword', async (req,res)=> {
 try {
-    const errors = validationResult(req);
-    
-
     
     const {currentEmail, currentPassword} = req.params;
     const { newEmail, newPassword} = req.body;
@@ -109,5 +107,11 @@ try {
     res.status(500).send("An error occurred while updating the user.");
 
 }
+
+});
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT,() => {
+    console.log(`Server is running on http://localhost:${PORT}`);
 });
 
