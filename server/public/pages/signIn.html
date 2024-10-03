@@ -10,7 +10,7 @@
         object-fit: cover;
         background-repeat: repeat;
 
-        
+        margin: auto;
       }
       input[type="text"],
       input[type="password"] {
@@ -65,6 +65,11 @@
           float: none;
         }
       }
+      @media screen and (min-width: 622px) {
+        body {
+          width: 622px; /* 1 column by default */
+        }
+      }
     </style>
   </head>
   <body>
@@ -78,5 +83,9 @@
 
       <button type="submit">Login</button>
     </form>
+    <div class="container" style="background-color: #f1f1f1">
+      <button type="button" class="cancelbtn">Cancel</button>
+      <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
   </body>
 </html>
