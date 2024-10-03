@@ -5,11 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
+      body {
+        background: url(https://img.freepik.com/free-vector/shiny-green-heartbeat-pulse-electrocardiogram-design-creative-background-health-medical-concept_1302-5649.jpg);
+        object-fit: cover;
+        background-repeat: repeat;
+
+        
+      }
       input[type="text"],
       input[type="password"] {
         width: 100%;
         padding: 12px 20px;
-        margin: 8px 0;
+        margin: 16px 0;
         display: inline-block;
         border: 1px solid #ccc;
         box-sizing: border-box;
@@ -29,15 +36,31 @@
         opacity: 0.8;
       }
       form {
-        padding: 32px;
+        padding: 50px;
 
         border-radius: 30px;
 
         background-color: lightgrey;
+
+        /* position: absolute; */
+
+        /* left: 50%;
+        top: 50%; */
+
+        margin-top: 150px;
+        justify-content: center;
+        align-items: center;
       }
 
       @media screen and (max-width: 300px) {
         span.psw {
+          display: block;
+          float: none;
+        }
+      }
+
+      @media screen and (max-width: 650px) {
+        form {
           display: block;
           float: none;
         }
