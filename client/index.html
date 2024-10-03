@@ -1,11 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>rylanPage</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="./assets/GrowU-logo.PNG"
+    />
+    <style></style>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav>
+      <img src="./assets/GrowU-logo.PNG" alt="" />
+      <div class="links">
+        <a href="">Home</a>
+        <a href="">About</a>
+        <a href="">Signs</a>
+        <a href="">Flagpoles</a>
+        <a href="">Maintenance & Repair</a>
+        <a href="">Gallery</a>
+        <a href="">Contact</a>
+      </div>
+    </nav>
+
+     <section aria-label="Newest Photos">
+      <div class="carousel" data-carousel>
+        <button class="carousel-button prev" data-carousel-button>
+          &#10502;
+        </button>
+        <button class="carousel-button next" data-carousel-button>
+          &#10503;
+        </button>
+        <ul data-slides>
+          <li class="slide" data-active>
+            <img src="./assets/gym-photo1.webp" alt="GrowU Image #1" />
+          </li>
+          <li class="slide">
+            <img src="./assets/gym-photo2.webp" alt="GrowU Image #2" />
+          </li>
+          <li class="slide">
+            <img src="./assets/gym-photo3.jpg" alt="GrowU Image #3" />
+          </li>
+          <li class="slide">
+            <img src="./assets/gym-photo4.jpg" alt="GrowU Image #4" />
+          </li>
+          <li class="slide">
+            <img src="./assets/gym-photo5.jpg" alt="GrowU Image #5" />
+          </li>
+        </ul>
+      </div>
+    </section>
+  </body>
 </html>

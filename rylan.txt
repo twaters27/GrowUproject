@@ -1,3 +1,4 @@
+10/1/24
 1. My role is to be a Design Specialist
 
 2.My responsibilities for my role is to be the main designer/front-end developer by helping add colors/nav bars/ect
@@ -9,3 +10,11 @@
 5. My goals for the project is to help as much as I can for the design aspect for the project
 
 6. Help design the base of the websites
+
+10/2/24
+
+1. The new challenges I fased today was making my carousel work with the images
+
+2. I am either using w3schools or chatGBT
+
+3. using Figma or Google chat
