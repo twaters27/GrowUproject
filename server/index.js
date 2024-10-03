@@ -63,7 +63,7 @@ app.post('/submit-make', loginValidate, async(req,res)=>{
         }
         let user = users.find(u => u.email === email  && u.password === password);
         if (user) {
-           user
+           user;
         } else{
             user = {email, password};
             users.push(user);

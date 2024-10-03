@@ -68,15 +68,36 @@
     </style>
   </head>
   <body>
-    <form id="form1 " action="">
-      <label for="urname"><b> Username </b></label>
-      <input type="text" placeholder="Enter Username" name="uname " required />
+    <form action="/submit-make" method="POST">
+      <label for="Email"><b> Email </b></label>
+      <input type="text" id="Email" placeholder="Enter Email" name="Email " required />
 
-      <label for="psw"> <b>Password</b> </label>
+      <label for="password"> <b>Password</b> </label>
 
-      <input type="password" placeholder="Enter Password" name="psw" required />
+      <input type="password" id ="password" placeholder="Enter Password" name="password" required />
 
       <button type="submit">Login</button>
     </form>
   </body>
+  <script>
+    async function fetchUsers() {
+        try {
+          const response = await fetch("/users");
+          if (!response.ok) {
+            throw new Error("Error fetching users. Response not ok");
+          }
+          // there could be an error getting response/fetching the endpoint
+          console.log(response);
+          const users = await response.json();
+          // there could be an error parsing the response
+          // console.log(users);
+          return users;
+        } catch (error) {
+          console.error("There was a problem");
+          console.error(error);
+        }
+      }
+    
+   
+  </script>
 </html>
