@@ -1,7 +1,7 @@
 Test from Dayana!
 
-10/1/24
--
+# 10/1/24
+
 I'm the project coordinator.
 
 My responsibilities are to make sure everyone is helping in some way or another and things are progressing well.
@@ -14,11 +14,22 @@ My biggest challenge was get to know the people of my new group.
 My goals are to do as much as I can for the group and complete as much as the rubrick asks us for.
 
 I will continue the mockup on figma.
-
-10/2/24
 -
+# 10/2/24
+
 A new challenge that arose today is that we are still very lost!
 
-One resource that I'm using to help me out is W3 schools
+One resource that I'm using to help me out is W3 schools.
 
 One resource I'm using to collaborate better with my teams is google chats!
+-
+# 10/3/24
+
+I'm not sure if it's my full effort, but I'm definetly trying.
+
+I hope to improve the site by getting the sign/log in page complete by the end of the week.
+
+A techincal challenge is that git struggles are still here and I'm personally not the greatest at Javascript ;(
+
+A way I can support my team is by minimizing my mistakes.
+-
