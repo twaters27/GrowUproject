@@ -8,7 +8,8 @@
       body {
         background: url(https://img.freepik.com/free-vector/shiny-green-heartbeat-pulse-electrocardiogram-design-creative-background-health-medical-concept_1302-5649.jpg);
         object-fit: cover;
-        background-repeat: repeat;
+        background-repeat:  repeat;
+        background-size: 100%;
 
         margin: auto;
       }
@@ -21,6 +22,16 @@
         border: 1px solid #ccc;
         box-sizing: border-box;
       }
+      footer {
+        justify-content: center;
+        margin: 25;
+      }
+
+      span {
+        text-align: center;
+        background-color: white;
+        border-radius: 20px;
+      }
 
       button {
         background-color: #04aa6d;
@@ -30,6 +41,9 @@
         border: none;
         cursor: pointer;
         width: 100%;
+      }
+      span.psw {
+        margin: 125px;
       }
 
       button:hover {
@@ -75,38 +89,55 @@
   <body>
     <form action="/submit-make" method="POST">
       <label for="email"><b> Email </b></label>
-      <input type="email" id="email" placeholder="Enter Email" name="email " required />
+      <input
+        type="email"
+        id="email"
+        placeholder="Enter Email"
+        name="email"
+        required
+      />
 
       <label for="password"> <b>Password</b> </label>
 
-      <input type="password" id ="password" placeholder="Enter Password" name="password" required />
+      <input
+        type="password"
+        id="password"
+        placeholder="Enter Password"
+        name="password"
+        required
+      />
 
       <button type="submit">Login</button>
+      <footer>
+        <b>
+          <span class="createnewa"
+            >Create<a href="user.html"> Account </a></span
+          ></b
+        >
+        <b>
+          <span class="psw">Forgot <a href="">password?</a></span></b
+        >
+      </footer>
     </form>
-    <div class="container" style="background-color: #f1f1f1">
-      <button type="button" class="cancelbtn">Cancel</button>
-      <span class="psw">Forgot <a href="#">password?</a></span>
-    </div>
+    <div class="container"></div>
   </body>
   <script>
     async function fetchUsers() {
-        try {
-          const response = await fetch("/users");
-          if (!response.ok) {
-            throw new Error("Error fetching users. Response not ok");
-          }
-          // there could be an error getting response/fetching the endpoint
-          console.log(response);
-          const users = await response.json();
-          // there could be an error parsing the response
-          // console.log(users);
-          return users;
-        } catch (error) {
-          console.error("There was a problem");
-          console.error(error);
+      try {
+        const response = await fetch("/users");
+        if (!response.ok) {
+          throw new Error("Error fetching users. Response not ok");
         }
+        // there could be an error getting response/fetching the endpoint
+        console.log(response);
+        const users = await response.json();
+        // there could be an error parsing the response
+        // console.log(users);
+        return users;
+      } catch (error) {
+        console.error("There was a problem");
+        console.error(error);
       }
-    
-   
+    }
   </script>
 </html>
