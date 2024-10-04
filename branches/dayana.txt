@@ -31,5 +31,5 @@ I hope to improve the site by getting the sign/log in page complete by the end o
 
 A techincal challenge is that git struggles are still here and I'm personally not the greatest at Javascript ;(
 
-A way I can support my team is by minimizing my mistakes.
+A way I can support my team is by minimizing my mistakes. :D
 -
