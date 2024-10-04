@@ -19,3 +19,13 @@ figuring out how to add user validation.
 w3 schools 
 
 google chats
+
+10/4/24
+
+1. Yes i believe i am doing the most i can and am putting effort towards bettering the team
+
+2. Fully functional, design can come after
+
+3. Creating and login with accounts, redircting people to main page after login
+
+4. Help them
