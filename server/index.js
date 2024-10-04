@@ -1,13 +1,6 @@
 const express = require('express');
 const path = require('path');
 const fs = require('fs').promises;
-const {check, validationResult} = require('express-validator');
-var loginValidate = [
-    check('email', 'Username must be an email').isEmail().trim().escape().normalizeEmail(),
-    check('password').isLength({min:8})
-    .withMessage('Password must be at least 8 characters')
-    .matches('[0-9').withMessage('Password must contain a number')
-    .matches('[A-Z]').withMessage("Password must contain a uppercase letter").trim().escape()];
 
 
 
@@ -25,7 +18,7 @@ app.get('/', (req,res) => {
     res.sendFile('index.html', {root:clientPath});
 });
 
-app.get('/users', async(req,res) => {
+app.get('/user', async(req,res) => {
     try {
         const data = await fs.readFile(dataPath, 'utf8');
 
@@ -45,70 +38,73 @@ app.get ('/signIn', (req,res) => {
     
 
 });
-app.post('/submit-make', loginValidate, async(req,res)=>{
-    try{
-        const errors = validationResult(req);
-        if(!errors.isEmpty()){
-            return res.status(422).json({errors:errors.array});
-        }else{
+app.post('/submit-make', async (req, res) => {
+    try {
+        const { email, password } = req.body;
+        console.log(email);
+        console.log(password);
 
-        const {email, password} = req.body;
+        // Read existing users from file
         let users = [];
         try {
             const data = await fs.readFile(dataPath, 'utf8');
             users = JSON.parse(data);
-        } catch (error){
-            console.error("Error reading user data:", error);
+        } catch (error) {
+            // If file doesn't exist or is empty, start with an empty array
+            console.error('Error reading user data:', error);
             users = [];
         }
-        let user = users.find(u => u.email === email  && u.password === password);
+
+        // Find or create user
+        let user = users.find(u => u.email === email && u.password === password);
         if (user) {
            user;
         } else{
             user = {email, password};
             users.push(user);
         }
-        await fs.writeFile(dataPath, JSON.stringify(users,null,2));
-        res.redirect('/user');
-    }
-    } catch (error){
+
+        // Save updated users
+        await fs.writeFile(dataPath, JSON.stringify(users, null, 2));
+        res.redirect('/signIn');
+    } catch (error) {
         console.error('Error processing form:', error);
-        res.status(500).send("An error occured while processing your submission")
+        res.status(500).send('An error occurred while processing your submission.');
     }
 });
 
 
-app.put('/update-user/:currentEmail/:currentPassword', async (req,res)=> {
-try {
+// app.put('/update-user/:currentEmail/:currentPassword', async (req,res)=> {
+// try {
     
-    const {currentEmail, currentPassword} = req.params;
-    const { newEmail, newPassword} = req.body;
+//     const {currentEmail, currentPassword} = req.params;
+//     const { newEmail, newPassword} = req.body;
     
-    console.log('Current user:', { currentEmail, currentPassword });
-        console.log('New user data:', { newEmail, newPassword });
-    const data = await fs.readFile(dataPath, 'utf8');
-    if (data) {
-        let users = JSON.parse(data);
-        const userIndex = users.findIndex(user=> user.email === currentEmail && user.password === currentPassword);
-        console.log(userIndex);
-        if (userIndex === -1){
-            return res.status(404).json({message : "User not found"});
+//     console.log('Current user:', { currentEmail, currentPassword });
+//         console.log('New user data:', { newEmail, newPassword });
+//     const data = await fs.readFile(dataPath, 'utf8');
+//     if (data) {
+//         let users = JSON.parse(data);
+//         const userIndex = users.findIndex(user=> user.email === currentEmail && user.password === currentPassword);
+//         console.log(userIndex);
+//         if (userIndex === -1){
+//             return res.status(404).json({message : "User not found"});
 
-        }
-        users[userIndex] = {...users[userIndex], email: newEmail, password: newPassword};
-        console.log(users);
-        await fs.writeFile(dataPath, JSON.stringify(users,null,2));
+//         }
+//         users[userIndex] = {...users[userIndex], email: newEmail, password: newPassword};
+//         console.log(users);
+//         await fs.writeFile(dataPath, JSON.stringify(users,null,2));
 
-        res.status(200).json({message: `You sent ${newEmail} and ${newPassword}`});
-    }
+//         res.status(200).json({message: `You sent ${newEmail} and ${newPassword}`});
+//     }
 
-} catch (error){
-    console.error("Error updating user:", error);
-    res.status(500).send("An error occurred while updating the user.");
+// } catch (error){
+//     console.error("Error updating user:", error);
+//     res.status(500).send("An error occurred while updating the user.");
 
-}
+// }
 
-});
+// });
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT,() => {
