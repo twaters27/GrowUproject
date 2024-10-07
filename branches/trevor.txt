@@ -1,3 +1,5 @@
+10/1/24
+
 My role is backend developer.
 
 My responsibiliies are the back end of the project, 90% of it being in the server and js files.
@@ -9,3 +11,21 @@ The biggest challeenge today was getting everyone set up with their local files 
 My goals for the project are to have a fully functional webpage(s) with 0 errors in the code.
 
 I will mainly work on getting the index.js file set up, so that my teammates can see their webpages and work on them without having to do it blindy.
+
+10/2/24
+
+figuring out how to add user validation.
+
+w3 schools 
+
+google chats
+
+10/4/24
+
+1. Yes i believe i am doing the most i can and am putting effort towards bettering the team
+
+2. Fully functional, design can come after
+
+3. Creating and login with accounts, redircting people to main page after login
+
+4. Help them
