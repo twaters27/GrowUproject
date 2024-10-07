@@ -87,40 +87,73 @@
  </head> 
  <body> 
 
-    <form id="updateForm">
-         <label for="currentEmail">CurrentEmail:</label>
-        <input type="email" id="currentEmail" required /><br /><br />
-        <label for="currentpassword">CurrentPassword:</label>
-        <input type="password" id="currentpassword" required /><br /><br />
-        <label for="newpassword">NewPassword:</label>
-        <input type="password" id="newpassword" required /><br /><br />
+    <form action="update-user" id="updateForm">
+         
+        <label for="currentPassword">CurrentPassword:</label>
+        <input type="password" id="currentPassword" name="currentPassword" required /><br /><br />
+        <label for="newPassword">NewPassword:</label>
+        <input type="password" id="newPassword" name ="newPassword" required /><br /><br />
 
         <button id = "hoverButton"type="submit">Update account</button> 
 
          <span class="createnewa"
-            >Log<a href="loginpage.html"> In </a></span
+            >Create<a href="/user"> Account </a></span
+            >Log<a href="/loginPage"> In </a></span
           ></b
         >
         <b>
-          <span class="psw">Create <a href="signin.html">Account</a></span></b
+          <span class="psw">Forgot <a href="/user">password?</a></span></b
+          <span class="psw">Create <a href="/signIn">Account</a></span></b
         >
       </form>
     </div> 
      
     <script>
-    //    const button = document.getElementById('hoverButton');
+        document
+        .getElementById("updateForm")
+        .addEventListener("submit", async (e) => {
+          e.preventDefault();
+          const currentPassword = document.getElementById("currentPassword").value;
+          const newPassword = document.getElementById("newPassword").value;
+         
+          try {
+            const response = await fetch(
+              `/update-user/${currentPassword}`,
+              {
+                method: "PUT",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ newPassword }),
+              }
+            );
+            const data = await response.json();
+            console.log(data);
+         
+            // alert("Message is: " + data.message);
+          } catch (error) {
+            alert("Error updating user: " + error.message);
+          }
+        });
+        async function fetchUsers() {
+        try {
+          const response = await fetch("/users");
+          if (!response.ok) {
+            throw new Error("Error fetching users. Response not ok");
+          }
+          // there could be an error getting response/fetching the endpoint
+          console.log(response);
+          const users = await response.json();
+          // there could be an error parsing the response
+          // console.log(users);
+          return users;
+        } catch (error) {
+          console.error("There was a problem");
+          console.error(error);
+        }
+      }
 
-    // const hoverImageSrc = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWdA5Z1zD-iaRYLw9nRlhnPEZmNYDfXGkxHQ&s';  // Replace with your image path
-    // const originalText = 'Update account';   // Original text of the button
-
-    // button.addEventListener('mouseover', function() {
-    //   button.innerHTML = `<img src="${hoverImageSrc}" alt="Hovered Image" />`;
-    // });
-
-    // button.addEventListener('mouseout', function() {
-    //   button.innerHTML = originalText;
-    // }); 
-           // testing a hover button 
+    
          
 </script>
  </body> 
