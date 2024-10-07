@@ -17,20 +17,12 @@ app.use(express.json());
 app.get('/', (req,res) => {
     res.sendFile('index.html', {root:clientPath});
 });
+app.get('/loginPage', async(req,res) => {
+    res.sendFile('pages/loginPage.html', {root:serverPublic});
+})
 
 app.get('/user', async(req,res) => {
-    try {
-        const data = await fs.readFile(dataPath, 'utf8');
-
-        const users = JSON.parse(data);
-        if (!users) {
-            throw new Error("Error no users available");
-        }
-        res.status(200).json(users);
-    } catch (error) {
-        console.error("Problem getting users" + error.message);
-        res.status(500).json({error: "Problem reading users"}); 
-    }
+    res.sendFile('pages/user.html', {root:serverPublic});
 });
 
 app.get ('/signIn', (req,res) => {
@@ -77,7 +69,7 @@ app.put('/update-user/:currentPassword', async (req,res)=> {
 try {
     
     const  {currentPassword} = req.params;
-    const { newPassword} = req.body;
+    const {newPassword} = req.body;
     
     console.log('Current user:', { currentPassword });
         console.log('New user data:', { newPassword });
@@ -119,8 +111,10 @@ app.post('/login', async(req,res) => {
 
             }
             res.status(200).json({message: `You successfully logged in`})
+            
 
     }
+    res.redirect('/');
 
     } catch(error){
         console.error("Error signing in:", error);
