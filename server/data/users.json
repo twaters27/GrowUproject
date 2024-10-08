@@ -10,5 +10,9 @@
   {
     "email": "newaccount@email.com",
     "password": "newpassword"
+  },
+  {
+    "email": "thebest@email.com",
+    "password": "bestbest"
   }
 ]
