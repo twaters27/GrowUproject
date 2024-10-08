@@ -114,7 +114,7 @@ app.post('/login', async(req,res) => {
             
 
     }
-    res.redirect('/');
+    window.location.href('/');
 
     } catch(error){
         console.error("Error signing in:", error);
