@@ -66,6 +66,21 @@
         align-items: center;
       }
 
+      .login-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 10vh; /* Full viewport height */
+      }
+
+      .logo {
+        transition: transform 0.5s ease;
+      }
+
+      .hop {
+        transform: translateY(-10px);
+      }
+
       @media screen and (max-width: 300px) {
         span.psw {
           display: block;
@@ -87,13 +102,13 @@
     </style>
   </head>
   <body>
-    <form action="/login" id="loginForm" method="POST">
+    <form action="/login" method="POST">
       <label for="email"><b> Email </b></label>
       <input
         type="email"
         id="email"
         placeholder="Enter Email"
-        name="email"
+        name="emai"
         required
       />
 
@@ -139,6 +154,5 @@
         console.error(error);
       }
     }
-    
   </script>
 </html>
