@@ -5,6 +5,10 @@
   },
   {
     "email": "newemail@email.com",
-    "password": "newpw"
+    "password": "newnewbest"
+  },
+  {
+    "email": "newaccount@email.com",
+    "password": "newpassword"
   }
 ]

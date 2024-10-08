@@ -88,6 +88,7 @@ try {
 
         res.status(200).json({message: `You sent ${newPassword}`});
     }
+    
 
 } catch (error){
     console.error("Error updating user:", error);
@@ -114,7 +115,7 @@ app.post('/login', async(req,res) => {
             
 
     }
-    window.location.href('/');
+   
 
     } catch(error){
         console.error("Error signing in:", error);
