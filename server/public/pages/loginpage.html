@@ -4,57 +4,68 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+  </head>
     <style>
-      body {
-        background: url(https://img.freepik.com/free-vector/shiny-green-heartbeat-pulse-electrocardiogram-design-creative-background-health-medical-concept_1302-5649.jpg);
-        object-fit: cover;
-        background-repeat: repeat;
-        background-size: 100%;
-
-        margin: auto;
-      }
-      input[type="email"],
-      input[type="password"] {
-        width: 100%;
-        padding: 12px 20px;
-        margin: 16px 0;
-        display: inline-block;
-        border: 1px solid #ccc;
-        box-sizing: border-box;
+        body {
+          width: 60vw;
+          height: auto;
+          /* object-fit:cover; */
+          background: url(https://images.unsplash.com/photo-1507525428034-b723cf961d3e?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3);
+          background-size:auto;
+          /* background-repeat: repeat; */
+          /* background-size: 100%; */
+          margin: auto;
+        }
+        input[type="email"],
+        input[type="password"] {
+          padding: 12px 20px;
+          margin: 10px 0;
+          display: inline-block;
+          /* border: 1px solid #e0e0e0; */
+          box-sizing: border-box;
+          width: 50vw;
+          min-width: 10vw;
+          height: auto;
       }
       footer {
+        flex-wrap: wrap;
         justify-content: center;
         margin: 25;
       }
-
       span {
         text-align: center;
         background-color: white;
         border-radius: 20px;
+        /* width: 50vw;
+        height: auto; */
       }
 
       button {
-        background-color: #04aa6d;
+        background-color: #c7c7c7;
         color: white;
         padding: 14px 20px;
         margin: 8px 0;
         border: none;
         cursor: pointer;
-        width: 100%;
+        /* width: 100%; */
+        width: 50vw;
+        min-width: 10vw;
+        height: auto;
       }
       span.psw {
-        margin: 125px;
+        text-align: center;
+        color: red;
       }
 
       button:hover {
         opacity: 0.8;
       }
       form {
-        padding: 50px;
+        padding: 10%;
 
         border-radius: 30px;
 
-        background-color: lightgrey;
+        background-color: rgba(255, 255, 255, 0.664);
 
         /* position: absolute; */
 
@@ -64,9 +75,12 @@
         margin-top: 150px;
         justify-content: center;
         align-items: center;
+        width: 50vw;
+        min-width: 50vw;
+        max-width: 10vw;
       }
 
-      @media screen and (max-width: 300px) {
+      /* @media screen and (max-width: 300px) {
         span.psw {
           display: block;
           float: none;
@@ -82,33 +96,35 @@
       @media screen and (min-width: 622px) {
         body {
           width: 622px; /* 1 column by default */
-        }
-      }
     </style>
-  </head>
   <body>
-    <form action="/login" id="loginForm" method="POST">
+    
+    <form action="/login" method="POST">
+      <h1 id="title" style="text-align: center;">Login</h1>
       <label for="email"><b> Email </b></label>
+      <br>
       <input
         type="email"
         id="email"
-        placeholder="Enter Email"
+        placeholder="@gmail.com"
         name="email"
         required
       />
+      <br>
 
       <label for="password"> <b>Password</b> </label>
-
+      <br>
       <input
         type="password"
         id="password"
-        placeholder="Enter Password"
+        placeholder="**************"
         name="password"
         required
       />
 
       <button type="submit">Login</button>
       <footer>
+        <br>
         <b>
           <span class="createnewa"
             >Create<a href="/signIn"> Account </a></span
