@@ -103,21 +103,12 @@
   </head>
   <body>
     <form action="/login" method="POST">
-      <div class="login-container">
-        <img
-          src="https://www.freeiconspng.com/uploads/user-login-icon-14.png"
-          width="150px"
-          alt="Logo"
-          class="logo"
-          id="logo"
-        />
-      </div>
       <label for="email"><b> Email </b></label>
       <input
         type="email"
         id="email"
         placeholder="Enter Email"
-        name="email"
+        name="emai"
         required
       />
 
@@ -163,14 +154,5 @@
         console.error(error);
       }
     }
-    // For img
-    document.getElementById("logo").addEventListener("click", function () {
-      const logo = this;
-      logo.classList.add("hop");
-
-      setTimeout(() => {
-        logo.classList.remove("hop");
-      }, 500); // Match this duration with the CSS transition
-    });
   </script>
 </html>

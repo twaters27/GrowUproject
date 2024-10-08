@@ -1,6 +1,14 @@
 [
   {
-    "email": "prettydream@gmail.com",
-    "password": "Bayesdy1234*"
+    "email": "trevor@email.com",
+    "password": "newpw12"
+  },
+  {
+    "email": "newemail@email.com",
+    "password": "newnewbest"
+  },
+  {
+    "email": "newaccount@email.com",
+    "password": "newpassword"
   }
 ]

@@ -87,13 +87,12 @@
  </head> 
  <body> 
 
-    <form id="updateForm">
-         <label for="currentEmail">CurrentEmail:</label>
-        <input type="email" id="currentEmail" required /><br /><br />
-        <label for="currentpassword">CurrentPassword:</label>
-        <input type="password" id="currentpassword" required /><br /><br />
-        <label for="newpassword">NewPassword:</label>
-        <input type="password" id="newpassword" required /><br /><br />
+    <form action='update-user' id="updateForm">
+        
+        <label for="currentPassword">CurrentPassword:</label>
+        <input type="password" id="currentPassword" name="currentPassword" required /><br /><br />
+        <label for="newPassword">NewPassword:</label>
+        <input type="password" id="newPassword" name="newPassword" required /><br /><br />
 
         <button id = "hoverButton"type="submit">Update account</button> 
 
@@ -121,6 +120,34 @@
     //   button.innerHTML = originalText;
     // }); 
            // testing a hover button 
+           document
+        .getElementById("updateForm")
+        .addEventListener("submit", async (e) => {
+          e.preventDefault();
+          const currentPassword = document.getElementById("currentPassword").value;
+          const newPassword = document.getElementById("newPassword").value;
+         
+          try {
+            const response = await fetch(
+              `/update-user/${currentPassword}`,
+              {
+                method: "PUT",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ newPassword }),
+              }
+            );
+            const data = await response.json();
+            console.log(data);
+            // renderUsers();
+            // alert("Message is: " + data.message);
+            window.alert("You have changed your password!")
+            window.location.href = '/';
+          } catch (error) {
+            alert("Error updating user: " + error.message);
+          }
+        });
          
 </script>
  </body> 

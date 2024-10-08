@@ -109,7 +109,7 @@
         required
       />
 
-      <button type="submit">Login</button>
+      <button type="submit">Create Account</button>
       <footer>
         <b>
           <span class="createnewa"
@@ -136,6 +136,8 @@
         // there could be an error parsing the response
         // console.log(users);
         return users;
+        window.alert("You have created a new Account! Now please sign in.")
+        window.location.href = '/loginPage';
       } catch (error) {
         console.error("There was a problem");
         console.error(error);

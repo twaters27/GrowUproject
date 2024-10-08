@@ -86,8 +86,9 @@ try {
         console.log(users);
         await fs.writeFile(dataPath, JSON.stringify(users,null,2));
 
-        res.status(200).json({message: `You sent ${newEmail} and ${newPassword}`});
+        res.status(200).json({message: `You sent ${newPassword}`});
     }
+    
 
 } catch (error){
     console.error("Error updating user:", error);
@@ -114,7 +115,7 @@ app.post('/login', async(req,res) => {
             
 
     }
-    res.redirect('/');
+   
 
     } catch(error){
         console.error("Error signing in:", error);
