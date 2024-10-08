@@ -18,7 +18,7 @@ app.get('/', (req,res) => {
     res.sendFile('index.html', {root:clientPath});
 });
 app.get('/loginPage', async(req,res) => {
-    res.sendFile('pages/loginPage.html', {root:serverPublic});
+    res.sendFile('pages/loginpage.html', {root:serverPublic});
 })
 
 app.get('/user', async(req,res) => {
@@ -58,7 +58,7 @@ app.post('/submit-make', async (req, res) => {
 
         // Save updated users
         await fs.writeFile(dataPath, JSON.stringify(users, null, 2));
-        res.redirect('/signIn');
+        res.redirect('/loginPage');
     } catch (error) {
         console.error('Error processing form:', error);
         res.status(500).send('An error occurred while processing your submission.');
@@ -111,7 +111,8 @@ app.post('/login', async(req,res) => {
                 return res.status(404).json({message: "User not found"});
 
             }
-            res.status(200).json({message: `You successfully logged in`})
+            // window.location.href = '/';
+            res.status(200).json("You have logged in!");
             
 
     }
