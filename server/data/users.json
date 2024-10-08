@@ -1,6 +1,10 @@
 [
   {
     "email": "trevor@email.com",
-    "password": "thebest12"
+    "password": "newpw12"
+  },
+  {
+    "email": "newemail@email.com",
+    "password": "newpw"
   }
 ]

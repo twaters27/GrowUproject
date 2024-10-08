@@ -125,7 +125,7 @@
         .addEventListener("submit", async (e) => {
           e.preventDefault();
           const currentPassword = document.getElementById("currentPassword").value;
-          const currentEmail = document.getElementById("newPassword").value;
+          const newPassword = document.getElementById("newPassword").value;
          
           try {
             const response = await fetch(
