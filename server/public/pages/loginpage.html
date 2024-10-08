@@ -100,6 +100,9 @@
   <body>
     
     <form action="/login" method="POST">
+      <div class="login-container">
+        <img src="logo.png" alt="Logo" class="logo" id="logo" />
+      </div>
       <h1 id="title" style="text-align: center;">Login</h1>
       <label for="email"><b> Email </b></label>
       <br>
@@ -119,10 +122,12 @@
         id="password"
         placeholder="**************"
         name="password"
+        minlength="8"
+        maxlength="20"
         required
       />
 
-      <button type="submit">Login</button>
+      <button id=" signUpButton" type="submit">Login</button>
       <footer>
         <br>
         <b>
@@ -138,6 +143,10 @@
     <div class="container"></div>
   </body>
   <script>
+       
+
+        // Proceed with signup
+     
     async function fetchUsers() {
       try {
         const response = await fetch("/users");
