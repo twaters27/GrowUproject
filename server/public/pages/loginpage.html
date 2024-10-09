@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+  </head>
     <style>
         body {
           width: 40vw;
@@ -28,18 +29,20 @@
           height: auto;
       }
       footer {
+        flex-wrap: wrap;
         justify-content: center;
         margin: 25;
       }
-
       span {
         text-align: center;
         background-color: white;
         border-radius: 20px;
+        /* width: 50vw;
+        height: auto; */
       }
 
       button {
-        background-color: #04aa6d;
+        background-color: #c7c7c7;
         color: white;
         padding: 14px 20px;
         margin: 8px 0;
@@ -51,14 +54,15 @@
         height: auto;
       }
       span.psw {
-        margin: 125px;
+        text-align: center;
+        color: red;
       }
 
       button:hover {
         opacity: 0.8;
       }
       form {
-        padding: 50px;
+        padding: 10%;
 
         border-radius: 30px;
 
@@ -77,7 +81,7 @@
         max-width: 10vw;
       }
 
-      @media screen and (max-width: 300px) {
+      /* @media screen and (max-width: 300px) {
         span.psw {
           display: block;
           float: none;
@@ -93,37 +97,35 @@
       @media screen and (min-width: 622px) {
         body {
           width: 622px; /* 1 column by default */
-        }
-      }
     </style>
-  </head>
   <body>
     
     <form action="/login" method="POST">
       <h1 id="title" style="text-align: center;">Sign in</h1>
       <label for="email"><b> Email </b></label>
+      <br>
       <input
         type="email"
         id="email"
-        placeholder="Enter Email"
+        placeholder="@gmail.com"
         name="email"
         required
       />
+      <br>
 
       <label for="password"> <b>Password</b> </label>
-
+      <br>
       <input
         type="password"
         id="password"
-        placeholder="Enter Password"
+        placeholder="**************"
         name="password"
-        minlength="8"
-        maxlength="20"
         required
       />
 
       <button type="submit">Sign in</button>
       <footer>
+        <br>
         <b>
           <span class="createnewa"
             >Create<a href="/signIn"> Account </a></span
@@ -149,45 +151,10 @@
         // there could be an error parsing the response
         // console.log(users);
         return users;
-        window.location.href = '/'
       } catch (error) {
         console.error("There was a problem");
         console.error(error);
       }
     }
-    document
-        .getElementById("loginForm")
-        .addEventListener("submit", async (e) => {
-          e.preventDefault();
-          const email = document.getElementById("email").value;
-          const password = document.getElementById("password").value;
-
-          try {
-            const response = await fetch("/login", {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify({ email, password }),
-            });
-
-            if (!response.ok) {
-              throw new Error("User not found");
-            }
-
-            const user = await response.json();
-
-            // Save user to local storage
-            localStorage.setItem("currentUser", JSON.stringify(user));
-
-            // Redirect to user-info page
-            window.location.href = "/";
-          } catch (error) {
-            alert("Sign-In Failed: " + error.message);
-          }
-        });
-      
-    
-  
   </script>
 </html>
