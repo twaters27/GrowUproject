@@ -5,22 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-      body {
-        background: url(https://img.freepik.com/free-vector/shiny-green-heartbeat-pulse-electrocardiogram-design-creative-background-health-medical-concept_1302-5649.jpg);
-        object-fit: cover;
-        background-repeat: repeat;
-        background-size: 100%;
-
-        margin: auto;
-      }
-      input[type="email"],
-      input[type="password"] {
-        width: 100%;
-        padding: 12px 20px;
-        margin: 16px 0;
-        display: inline-block;
-        border: 1px solid #ccc;
-        box-sizing: border-box;
+        body {
+          width: 40vw;
+          height: auto;
+          /* object-fit:cover; */
+          background: url(https://images.unsplash.com/photo-1507525428034-b723cf961d3e?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3);
+          background-size:auto;
+          filter: drop-shadow(0 0 0.75rem rgba(0, 0, 0, 0.515));
+          /* background-repeat: repeat; */
+          /* background-size: 100%; */
+          margin: auto;
+        }
+        input[type="email"],
+        input[type="password"] {
+          padding: 12px 20px;
+          margin: 10px 0;
+          display: inline-block;
+          /* border: 1px solid #e0e0e0; */
+          box-sizing: border-box;
+          width: 30vw;
+          min-width: 10vw;
+          height: auto;
       }
       footer {
         justify-content: center;
@@ -40,7 +45,10 @@
         margin: 8px 0;
         border: none;
         cursor: pointer;
-        width: 100%;
+        /* width: 100%; */
+        width: 30vw;
+        min-width: 10vw;
+        height: auto;
       }
       span.psw {
         margin: 125px;
@@ -54,7 +62,7 @@
 
         border-radius: 30px;
 
-        background-color: lightgrey;
+        background-color: rgba(255, 255, 255, 0.918);
 
         /* position: absolute; */
 
@@ -64,21 +72,9 @@
         margin-top: 150px;
         justify-content: center;
         align-items: center;
-      }
-
-      .login-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 10vh; /* Full viewport height */
-      }
-
-      .logo {
-        transition: transform 0.5s ease;
-      }
-
-      .hop {
-        transform: translateY(-10px);
+        width: 30vw;
+        min-width: 30vw;
+        max-width: 10vw;
       }
 
       @media screen and (max-width: 300px) {
@@ -102,7 +98,9 @@
     </style>
   </head>
   <body>
-    <form action="/login" id="loginForm" method="POST">
+    
+    <form action="/login" method="POST">
+      <h1 id="title" style="text-align: center;">Sign in</h1>
       <label for="email"><b> Email </b></label>
       <input
         type="email"
@@ -124,7 +122,7 @@
         required
       />
 
-      <button type="submit">Login</button>
+      <button type="submit">Sign in</button>
       <footer>
         <b>
           <span class="createnewa"
