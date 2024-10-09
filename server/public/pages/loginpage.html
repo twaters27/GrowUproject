@@ -102,7 +102,7 @@
     </style>
   </head>
   <body>
-    <form action="/login" method="POST">
+    <form action="/login" id="loginForm" method="POST">
       <label for="email"><b> Email </b></label>
       <input
         type="email"
@@ -152,24 +152,6 @@
         // console.log(users);
         return users;
         window.location.href = '/'
-      } catch (error) {
-        console.error("There was a problem");
-        console.error(error);
-      }
-    }
-    
-    async function fetchUsers() {
-      try {
-        const response = await fetch("/users");
-        if (!response.ok) {
-          throw new Error("Error fetching users. Response not ok");
-        }
-        // there could be an error getting response/fetching the endpoint
-        console.log(response);
-        const users = await response.json();
-        // there could be an error parsing the response
-        // console.log(users);
-        return users;
       } catch (error) {
         console.error("There was a problem");
         console.error(error);

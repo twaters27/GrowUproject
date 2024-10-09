@@ -1,17 +1,5 @@
 [
   {
-    "email": "trevor@email.com",
-    "password": "newpw12"
-  },
-  {
-    "email": "newemail@email.com",
-    "password": "newnewbest"
-  },
-  {
-    "email": "newaccount@email.com",
-    "password": "newpassword"
-  },
-  {
     "email": "thebest@email.com",
     "password": "bestbest"
   }
