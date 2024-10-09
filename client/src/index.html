@@ -1,363 +1,724 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css" />
+    <script src="javascript.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-      integrity="sha512-...your-integrity-hash-here..."
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
     />
     <link
       rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
     />
-  </head>
-
-  <body> 
-    <nav>
-      <input type="checkbox" id="check" />
-      <label for="check" class="checkbtn">
-        <i class="fas fa-bars"></i>
-      </label>
-
-      <label class="logo">
-        GrowU
-        <img
-          src="https://th.bing.com/th?q=20Px+Image&w=138&h=138&c=7&o=5&cb=13&pid=1.7&mkt=en-US&cc=US&setlang=en&adlt=strict&t=1"
-          alt="Logo"
-          class="logo_img"
-        />
-      </label>
-
-      <ul>
-        <li><a class="active" href="#"> Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#"> Contact</a></li>
-        <li><a href ="/loginpage">Sign In</a></li>
-      </ul>
-    </nav>
-
+    <!-- or -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+</head>
+<body>
     <header>
-      <div class="carousel" data-carousel>
-        <button class="carousel-button prev" data-carousel-button>
-          &#10502;
-        </button>
-        <button class="carousel-button next" data-carousel-button>
-          &#10503;
-        </button>
-        <ul data-slides>
-          <li class="slide" data-active>
-            <img src="./assets/food1.jpg" alt="GrowU Image #1" />
-          </li>
-          <li class="slide">
-            <img src="./assets/food2.jpg" alt="GrowU Image #2" />
-          </li>
-          <li class="slide">
-            <img src="./assets/food3.jpg" alt="GrowU Image #3" />
-          </li>
-          <li class="slide">
-            <img src="./assets/food4.jpg" alt="GrowU Image #4" />
-          </li>
-          <li class="slide">
-            <img src="./assets/food5.jpg" alt="GrowU Image #5" />
-          </li>
+        <a href="#" class="logo"
+        ><i class="ri-home-heart-fill"></i><span>Logo</span></a
+      >
+      <ul class="navbar">
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+
+      <div class="main">
+        <a href="#" class="user"><i class="ri-user-fill"></i>Log in</a>
+        <a href="#">Register</a>
+        <div class="bx bx-menu" id="menu-icon"></div>
       </div>
-    </header>
 
-    <div class="main">
-      <main>
-        <div class="info">ckdkl</div>
-      </main>
+    </header> 
+    <section aria-label="Newest Photos">
+    <div class="carousel" data-carousel>
+      <button class="carousel-button prev" data-carousel-button>
+        &#10502;
+      </button>
+      <button class="carousel-button next" data-carousel-button>
+        &#10503;
+      </button>
+      <ul data-slides>
+        <li class="slide" data-active>
+          <img src="./assets/food1.jpg" alt="GrowU Image #1" />
+        </li>
+        <li class="slide">
+          <img src="./assets/food2.jpg" alt="GrowU Image #2" />
+        </li>
+        <li class="slide">
+          <img src="./assets/food3.jpg" alt="GrowU Image #3" />
+        </li>
+        <li class="slide">
+          <img src="./assets/food4.webp" alt="GrowU Image #4" />
+        </li>
+        <li class="slide">
+          <img src="./assets/food5.jpg" alt="GrowU Image #5" />
+        </li>
+      </ul>
     </div>
+  </section>
+    <div class="mainContent">
+    <aside class="left">
+  <div class="text1">
+    <div class="textSection">
+<p class="titles"><h1>Unlock Your Potential with Our Fitness Community!</h1></p>
+<p><h4>Are you ready to transform your life? At [Your Fitness Brand], we believe that fitness is not just a destination—it's a journey. Join a vibrant community dedicated to empowering each other, reaching new heights, and celebrating every milestone along the way.</h4></p>
 
-    <footer>FOOTER</footer>
+<p class="titles"><h1>Why Choose Us?</h1></p>
+<p><h4><li>• Tailored Programs: Whether you're a beginner or a seasoned athlete, our customized workout plans cater to all fitness levels, ensuring you progress at your own pace.</li></h4></p>
+  <p><h4><li>• Expert Guidance: Our certified trainers are here to support and motivate you, offering personalized advice and techniques to help you achieve your goals safely and effectively.</li></h4></p>
 
+<p><h4><li>• Inclusive Community: Connect with like-minded individuals who share your passion for health and wellness. Share your journey, celebrate achievements, and find workout buddies!</li></h4></p>
+
+<p><h4><li>• Flexible Options: With a variety of classes and training sessions, you can choose what fits best into your busy schedule—whether in-person or online.</li></h4></p>
+
+<p><h4><li>• Track Your Progress: Our state-of-the-art app allows you to monitor your workouts, nutrition, and progress, keeping you accountable and motivated.</li></h4></p>
+
+<p class="titles"><h1>Take the First Step Today!</h1></p>
+<p><h4>Join us now and discover the difference a supportive community can make. Sign up today and receive a FREE trial week to experience our classes firsthand. Your journey to a healthier, happier you starts here!</h4></p>
+
+<p class="titles"><h2>Don’t wait—let’s get started! Sign up now and embrace the change!</h2></p>
+  </div>
+</div>
+    </aside>
+    <!-- <main>
+      <img src="./assets/gym2.webp" alt="GrowU Image #2" class="gymImg"/>
+        </main> -->
+    <aside class="right">
+      <div class="text2">
+      <div class="textSection">
+      <p class="titles"><h1>Make Every Bite Count!</h1></p>
+      <p class="titles"><h2>As you journey toward your fitness goals, it's important to recognize that success is not just about working out; it’s a holistic endeavor that requires attention to multiple facets of health.</h2></p>
+      <p class="titles"><h2>Our pie chart effectively illustrates this concept, breaking down the essential components of a balanced approach:</h2></p>
+      <p><h4>• 70% Nutrition: What you consume plays a pivotal role in your overall well-being. Fuel your body with wholesome, nutrient-dense foods to enhance performance, recovery, and energy levels. Prioritizing a diet rich in fruits, vegetables, lean proteins, and healthy fats sets a strong foundation for your fitness journey.</h4></p>
+      <p><h4>• 15% Exercise: While movement is vital for building strength, endurance, and cardiovascular health, it works best when complemented by proper nutrition. Engaging in regular physical activity not only helps you achieve your goals but also contributes to improved mood and mental clarity.</h4></p>
+      <p><h4>• 10% Sleep: Quality rest is essential for recovery, hormonal balance, and cognitive function. By prioritizing a consistent sleep schedule, you enhance your body’s ability to repair itself and prepare for the challenges of the next day.</h4></p>
+      <p><h4>• 5% Hydration: Often underestimated, proper hydration is crucial for optimal bodily function. Staying adequately hydrated supports digestion, nutrient absorption, and energy levels, ensuring that your body operates at its best.</h4></p>
+      <p><h3>By embracing the insights from our pie chart, you can create a balanced and sustainable strategy that promotes long-term health and wellness. Each component plays a vital role in your journey, and by focusing on them collectively, you’ll not only achieve your fitness goals but also cultivate a vibrant, healthy lifestyle.</h3></p>
+      <p><h3>Take this opportunity to reflect on your current habits and make adjustments as needed. Consider keeping a journal to track your nutrition, exercise, and sleep patterns, as this can provide valuable insights into areas for improvement. Set realistic, achievable goals that align with your lifestyle, and celebrate your progress along the way.</h3></p>
+      <p class="titles"><h1>Embrace the Journey!</h1></p>
+      <p><h4>Your path to fitness is uniquely yours. Remember, balance is the key to lasting success. With commitment, patience, and a well-rounded approach, you can pave the way for a healthier, more fulfilling life. Celebrate each step you take towards your goals, and inspire others with your journey. Your health and well-being are worth the effort!</h4></p>
+    </div>
+  </div>
+    </aside>
+
+    <aside class="left">
+      <div class="chart-container">
+        <canvas id="nutritionChart"></canvas>
+    </div>
+  </aside>
+      <!-- <main>
+         Lorem ipsum dolor sit amet consectetur adipisicing elit. In minima labore quidem accusantium optio iure ratione accusamus voluptate, ipsa enim eaque praesentium saepe alias corporis quia doloremque repellat unde sapiente dolore recusandae ipsum est, nemo necessitatibus fugiat! Voluptatem neque dolores facilis consectetur, dolore earum laudantium culpa porro veniam odit animi doloremque corrupti, suscipit natus quibusdam provident perferendis. Perspiciatis, ipsa saepe? Ipsam mollitia eveniet nam voluptate, ullam sed sequi esse quis ab, quibusdam nulla in aut maxime? Saepe, in? Sapiente, aliquam iste reprehenderit totam nisi sequi sint corporis at quidem laudantium esse eligendi nam hic incidunt repellendus aspernatur corrupti. Quas error mollitia suscipit porro! Cum eos repudiandae amet debitis dolor ducimus provident labore. Quisquam facilis, consectetur quasi deserunt minima nihil aliquid, itaque beatae magnam labore obcaecati distinctio saepe explicabo possimus aperiam omnis sunt amet optio, corporis aspernatur sit ipsam maxime exercitationem? Nostrum dolore ex itaque! Atque natus sed delectus aut reiciendis illo, nobis et id, expedita, non eos repudiandae? Dolore asperiores exercitationem quae nostrum adipisci minima temporibus ad earum dignissimos voluptate, dolores maiores ab placeat expedita consequuntur iste pariatur dicta dolorum. Aliquam similique quidem aliquid voluptas sed earum praesentium harum. Enim molestiae pariatur minus voluptatibus earum, sunt quas laborum in, temporibus est suscipit facilis beatae, ea modi dolores numquam eos veritatis harum dolorum. Voluptates similique rerum fugiat animi perspiciatis est sapiente nostrum, praesentium, minima odio expedita exercitationem ducimus excepturi quibusdam consequuntur mollitia ab sit earum fugit nisi. Nemo neque accusantium dolor iusto similique inventore, placeat repudiandae architecto laudantium? Natus illum earum placeat similique harum porro optio, mollitia totam saepe dolores blanditiis et perspiciatis enim nesciunt, fugit explicabo officia nam quod corrupti minima dolor ratione temporibus dolore. Alias, quia harum tempora eius molestias dolore ipsum libero rerum quisquam exercitationem esse aut itaque nobis. Quidem vitae alias provident accusamus sit officia porro architecto!
+      </main>
+  <aside class="right">
+    RIGHT
+  </aside> -->
+    
+    </div>
+    <footer>
+        <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>company</h4>
+                    <ul>
+                        <li><a href="#">about-us</a></li>
+                        <li><a href="#">our services</a></li>
+                        <li><a href="#">privacy policy</a></li>
+                        <li><a href="#">affiliate programs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>get help</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">shipping</a></li>
+                        <li><a href="#">returns</a></li>
+                        <li><a href="#">order status</a></li>
+                        <li><a href="#">payment options</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>online shop</h4>
+                    <ul>
+                        <li><a href="#">yogurt</a></li>
+                        <li><a href="#">yogurt</a></li>
+                        <li><a href="#">yogurt</a></li>
+                        <li><a href="#">yogurt</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>follow us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-x"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    </footer>
     <style>
-      * {
+      *{
+        margin: 5px;
         box-sizing: border-box;
-
-        padding: 0;
-        margin: 0;
-        text-decoration: none;
-        list-style: none;
       }
-      ::-webkit-scrollbar {
-    display: none;
-       }
-        
-      
-      body {
-        height: 225vh;
+
+      body{
+        height: 95vh;
         background: green;
-        font-family: sans-serif;
-        /* text-align: center; */
+        font-family:  sans-serif; 
+        text-align: center;
         color: white;
         font-size: 24px;
         display: flex;
         flex-direction: column;
-
-    
-
-        font-family: Arial;
+        
       }
 
-      nav {
-        background: blueviolet;
-
-        height: 80px;
-        width: 100%;
-      }
-
-      label.logo {
-        color: white;
-        font-size: 30px;
-        line-height: 80px;
-        padding: 0 100px;
-        font-weight: bold;
-      }
-
-      .logo_img {
-        height: 50px;
-      }
-
-      nav ul {
-        float: right;
-        margin-right: 20px;
-      }
-
-      nav ul li {
-        display: inline-block;
-        line-height: 80px;
-        margin: 0 5px;
-      }
-
-      nav ul li a {
-        color: white;
-        font-size: 17px;
-        padding: 7px 13px;
-        border-radius: 3px;
-      }
-      a.active,
-      a:hover {
-        color: #ffffff;
-        font-weight: 100;
-        background: linear-gradient
-          (90deg, rgba(2, 0, 2, 0.21) 40%, rgba(0, 242, 255, 0.238) 100%);
-
-        transition: 0.5s;
-        box-shadow: 1px 1px 1px 1px rgba(2, 2, 92, 0.354);
-      }
-      .checkbtn {
-        font-size: 30px;
-        color: white;
-        float: right;
-        line-height: 80px;
-        margin-right: 40px;
-        cursor: pointer;
-        display: none;
-      }
-      #check {
-        display: none;
-      }
-
-      section {
-        background: url(https://preview.redd.it/glisaljkehx61.jpg?width=3840&format=pjpg&auto=webp&s=67ef0cab6703666629096074c75e22630c2292ee)
-          no-repeat;
-        background-size: cover;
-        height: calc(100vh - 80px);
-      }
-
-      header {
+      header{
         background: blue;
+        padding: 2em 0 2em 0;
       }
 
-      .carousel {
-        width: 100vw;
-        height: 100vh;
-        position: relative;
-        z-index: 0;
-      }
-
-      .carousel > ul {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-      }
-
-      .slide {
-        position: absolute;
-        inset: 0;
-        opacity: 0;
-        transition: 200ms opacity ease-in-out;
-        transition-delay: 200ms;
-        animation: slide 20s infinite;
-      }
-
-      .slide > img {
-        display: block;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center;
-      }
-
-      .slide[data-active] {
-        opacity: 1;
-        z-index: 1;
-        transition-delay: 0ms;
-      }
-
-      .carousel-button {
-        position: absolute;
-        z-index: 2;
-        background: none;
-        border: none;
-        font-size: 4rem;
-        top: 50%;
-        transform: translateY(-50%);
-        color: rgba(255, 255, 255, 0.9);
-        cursor: pointer;
-        border-radius: 0.25rem;
-        padding: 0 0.5rem;
-        background-color: rgba(0, 0, 0, 0.1);
-      }
-
-      .carousel-button:hover,
-      .carousel-button:focus {
-        color: white;
-        background-color: rgba(0, 0, 0, 0.2);
-      }
-
-      .carousel-button:focus {
-        outline: 1px solid black;
-      }
-
-      .carousel-button.prev {
-        left: 1rem;
-      }
-
-      .carousel-button.next {
-        right: 1rem;
-      }
-
-      .reveal {
-        opacity: 1;
-      }
-
-      .main {
-        display: flex;
+      .mainContent{
         flex: 1;
+        display: block;
       }
 
-      main {
-        background: purple;
-        padding: 3em 0 3em 0;
+      .left{
+        background: #29fd53;
+        padding: 0em 0 0em 0;
+        flex: 1 1 100px;
+      }
+
+      .text1{
+        background-image: url("./assets/gym2.webp");
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      .text2{
+        background-image: url("./assets/gym3.webp");
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      .textSection{
+        background-color: rgba(255, 255, 255, .2);
+        color: white;
+    
+      }
+
+      p{
+        padding: 10px;
+      }
+      p.titles{
+        padding: 50px;
+      }
+
+      .gymImg{
+        display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+      }
+
+      main{
+        background: blue;
+        padding: 0em 0 0em 0;
         flex: 5 5 150px;
       }
 
-      footer {
+      .right{
         background: blue;
-        padding: 3em 0 3em 0;
+        padding: 0em 0 0em 0;
+        flex: 1 1 100px;
       }
 
-      @media all and (max-width: 550px) {
-        .main {
+      footer{
+        background: blue;
+        padding: 0em 0 0em 0;
+      }
+
+      .chart-container {
+        display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    background-color: #f4f4f4;
+    
+    }
+    
+    
+    #nutritionChart {
+      width: 80%;
+      max-width: 1000px;
+     padding: 2em;
+    
+    }
+
+      body {
+  margin: 0;
+  padding: 0;
+}
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.carousel {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  z-index: 0;
+}
+
+.carousel > ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: 200ms opacity ease-in-out;
+  transition-delay: 200ms;
+  animation: slide 20s infinite;
+}
+
+
+.slide > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.slide[data-active] {
+  opacity: 1;
+  z-index: 1;
+  transition-delay: 0ms;
+}
+
+.carousel-button {
+  position: absolute;
+  z-index: 2;
+  background: none;
+  border: none;
+  font-size: 4rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+  border-radius: 0.25rem;
+  padding: 0 0.5rem;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.carousel-button:hover,
+.carousel-button:focus {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.carousel-button:focus {
+  outline: 1px solid black;
+}
+
+.carousel-button.prev {
+  left: 1rem;
+}
+
+.carousel-button.next {
+  right: 1rem;
+}
+
+.reveal {
+  opacity: 1;
+}
+
+::-webkit-scrollbar {
+    display: none;
+       }
+
+*{
+  padding:0;
+  margin:0;
+  box-sizing: border-box;
+  font-family:'poppins', sans-sarif;
+  text-decoration: none;
+  list-style: none;
+}
+:root{
+  --bg-color: #222327;
+  --text-color: #fff;
+  --main-color: #29fd53;
+}
+body {
+  min-height: 100vh;
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+header{
+  position: fixed;
+  width: 100%;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 28px 12%;
+  transition: all .50s ease;
+  background: rgba(255, 255, 255, .9);
+}
+.logo{
+  display:flex;
+  align-items: center;
+}
+.logo i {
+  color: var(--main-color);
+  font-size: 28px;
+  margin-right: 3px;
+}
+.logo span{
+  color: black;
+  font-size: 1.7rem;
+  font-weight: 600;
+}
+.navbar{
+  display: flex;
+}
+.navbar a {
+  color: black;
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 5px 0;
+  margin: 9px 30px;
+  transition: all .50s ease;
+}
+.navbar a:hover{
+  color: var(--main-color);
+}
+.navbar a.active{
+  color: bar(--main-color);
+}
+.main{
+  display: flex;
+  align-items: center;
+}
+.main a{
+  margin-right: 25px;
+  margin-left: 10px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: all .50s ease;
+  color: black;
+}
+.user{
+  display: flex;
+  align-items: center;
+ 
+}
+.user i{
+  color: var(--main-color);
+  font-size: 28px;
+  margin-right: 7px;
+}
+.main a:hover{
+  color: var(--main-color);
+}
+#menu-icon{
+  font-size: 35px;
+  color: black;
+  cursor: pointer;
+  z-index: 10001;
+  display: none;
+}
+
+@media (max-width: 1280px) {
+  header{
+      padding: 14px 2%;
+      transition: .2s;
+  }
+  .navbar a{
+      padding: 5px 0;
+      margin: 0px 20px;
+  }
+}
+
+@media (max-width: 1090px) {
+  #menu-icon{
+      display: block;
+  }
+  .navbar{
+      position: absolute;
+      top: 100%;
+      right: -100%;
+      width: 270px;
+      background: rgba(255, 255, 255, .9);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      border-radius: 10px;
+      transition: all .50s ease;
+  }
+  .navbar a{
+      display: block;
+      margin: 12px 0;
+      padding: 0px 25px;
+      transition: all .50s ease;
+      color: black;
+  }
+  .navbar a:hover{
+      color: var(--main-color);
+      transform: translateY(5px);
+  }
+  .navbar.open{
+      right: 2%;
+  }
+}
+
+
+
+      @media all and (max-width: 550px){
+        .mainContent{
           flex-direction: column;
         }
-        main {
+        main{
           padding: 5em 0 5em 0;
         }
-       
       }
 
-      @media (max-width: 952px) {
-        label.logo {
-          font-size: 18px;
-          padding-left: 50px;
-        }
-        nav ul li a {
-          font-size: 16px;
-        }
-      }
 
-      @media (max-width: 1070px) {
-        .checkbtn {
-          display: block;
-        }
-        ul {
-          position: fixed;
-          width: 100%;
-          height: 100vh;
-          background: #000000b6;
-          top: 80px;
-          left: -100%;
-          text-align: center;
-          transition: all 0.5s;
-        }
-        nav ul li {
-          display: block;
-          margin: 50px 0;
-          line-height: 30px;
-        }
-        nav ul li a {
-          font-size: 20px;
-        }
-        a:hover,
-        a.active {
-          background: none;
-          color: #0082e6;
-        }
-        #check:checked ~ ul {
-          left: 0;
-        }
-      }
+
+
+      @import url('http://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+body{
+    line-height: 1.5;
+    font-family: 'Poppins', sans-serif;
+}
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+.container{
+    max-width: 1170px;
+    margin: auto;
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+ul{
+    list-style: none;
+}
+.footer{
+    background-color: #24262b;
+    padding: 70px 0;
+}
+.footer-col{
+    width: 25%;
+    padding: 0 15px;
+}
+.footer-col h4{
+font-size: 18px;
+color: #ffffff;
+text-transform: capitalize;
+margin-bottom: 35px;
+font-weight: 500;
+position: relative;
+}
+footer-col h4::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    background-color: #e91e63;
+    height: 2px;
+    box-sizing: border-box;
+    width: 50px;
+}
+.footer-col ul li:not(:last-child){
+    margin-bottom: 10px
+}
+.footer-col ul li a{
+    font-size: 16px;
+    text-transform: capitalize;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 300;
+    color: #bbbbbb;
+    display: block;
+    transition: all 0.3s ease;
+}
+.footer-col ul li a:hover{
+    color: #ffffff;
+    padding-left: 8px;
+}
+.footer-col .social-links a{
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: rgba(255,255,255,0.2);
+    margin:0 10px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: #ffffff;
+    transition: all 0.5s ease;
+}
+.footer-col .social-links a:hover{
+    color: #24262b;
+    background-color: #ffffff;
+}
+
+/* responsive */
+@media(max-width: 767px){
+    .footer-col {
+        width: 50%;
+        margin-bottom: 30px;
+    }
+}
+@media(max-width: 574px){
+    .footer-col {
+        width: 100px;
+    }
+}
     </style>
-    <script>
-      const buttons = document.querySelectorAll("[data-carousel]");
+</body>
+<script>
+  let menu = document.querySelector("#menu-icon");
+let navbar = document.querySelector(".navbar");
 
-      buttons.forEach((button) => {
-        button.addEventListener("click", () => {
-          const offset = button.dataset.carouselButton === "next" ? 1 : -1;
-          changeSlide(offset);
-        });
-      });
+menu.onclick = () => {
+  menu.classList.toggle("bx-x");
+  navbar.classList.toggle("open");
+};
+const buttons = document.querySelectorAll("[data-carousel]");
 
-      function changeSlide(offset) {
-        const carousel = document.querySelector("[data-carousel");
-        const slides = carousel.querySelector("[data-slides]");
-        const activeSlide = slides.querySelector("[data-active]");
-        let newIndex = [...slides.children].indexOf(activeSlide) + offset;
-        if (newIndex < 0) newIndex = slides.children.length - 1;
-        if (newIndex >= slides.children.length) newIndex = 0;
+buttons.forEach((button) => {
+button.addEventListener("click", () => {
+  const offset = button.dataset.carouselButton === "next" ? 1 : -1;
+  changeSlide(offset);
+});
+});
 
-        slides.children[newIndex].dataset.active = true;
-        delete activeSlide.dataset.active;
-      }
+function changeSlide(offset) {
+const carousel = document.querySelector("[data-carousel");
+const slides = carousel.querySelector("[data-slides]");
+const activeSlide = slides.querySelector("[data-active]");
+let newIndex = [...slides.children].indexOf(activeSlide) + offset;
+if (newIndex < 0) newIndex = slides.children.length - 1;
+if (newIndex >= slides.children.length) newIndex = 0;
 
-      setInterval(() => {
-        changeSlide(1);
-      }, 4000);
+slides.children[newIndex].dataset.active = true;
+delete activeSlide.dataset.active;
+}
 
-      const scrollLinks = document.querySelectorAll(".scroll-link");
-      scrollLinks.forEach((link) => {
-        link.addEventListener("click", (e) => {
-          e.preventDefault();
-          const id = e.target.getAttribute("href").slice(1);
-          const element = document.getElementById(id);
-          const vhInPixels = window.innerHeight * 0.2;
-          let Position = element.offsetTop - vhInPixels;
+setInterval(() => {
+changeSlide(1);
+}, 4000);
 
-          window.scrollTo({
-            left: 0,
-            top: Position,
-          });
-        });
-      });
-    </script>
-  </body>
+const scrollLinks = document.querySelectorAll(".scroll-link");
+scrollLinks.forEach((link) => {
+link.addEventListener("click", (e) => {
+  e.preventDefault();
+  const id = e.target.getAttribute("href").slice(1);
+  const element = document.getElementById(id);
+  const vhInPixels = window.innerHeight * 0.2;
+  let Position = element.offsetTop - vhInPixels;
+
+  window.scrollTo({
+      left: 0,
+      top: Position,
+  });
+});
+});
+
+const ctx = document.getElementById('nutritionChart').getContext('2d');
+
+const data = {
+    labels: [
+        'Balanced Nutrition (70%)',
+        'Exercise (15%)',
+        'Sleep (10%)',
+        'Hydration (5%)'
+    ],
+    datasets: [{
+        label: 'Fitness Success Components',
+        data: [70, 15, 10, 5],
+        backgroundColor: [
+            'rgba(75, 192, 192, 0.6)', // Balanced Nutrition
+            'rgba(153, 102, 255, 0.6)', // Exercise
+            'rgba(255, 159, 64, 0.6)',   // Sleep
+            'rgba(255, 99, 132, 0.6)'    // Hydration
+        ],
+        borderColor: [
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)',
+            'rgba(255, 99, 132, 1)'
+        ],
+        borderWidth: 1
+    }]
+};
+
+const config = {
+    type: 'pie',
+    data: data,
+    options: {
+        responsive: true,
+        plugins: {
+            legend: {
+                position: 'top',
+                labels: {
+                    font: {
+                        size: 24 // Change this value to adjust label size
+                    }
+                }
+            },
+            tooltip: {
+                callbacks: {
+                    label: function(tooltipItem) {
+                        return tooltipItem.label + ': ' + tooltipItem.raw + '%';
+                    }
+                }
+            }
+        }
+    }
+};
+
+const nutritionChart = new Chart(ctx, config);
+
+</script>
 </html>
