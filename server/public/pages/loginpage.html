@@ -117,7 +117,7 @@
         width="100px"
         alt="Hopping Image"
       />
-      <h1 id="title" style="text-align: center">Sign in</h1>
+      <h1 id="title" style="text-align: center">Sign Up</h1>
       <label for="email"><b> Email </b></label>
       <br />
       <input
@@ -169,7 +169,6 @@
       }, 1000); // Adjust time as needed
     });
 
-    
     async function fetchUsers() {
       try {
         const response = await fetch("/users");
@@ -187,36 +186,36 @@
         console.error(error);
       }
     }
-     document
-        .getElementById("loginForm")
-        .addEventListener("submit", async (e) => {
-          e.preventDefault();
-          const email = document.getElementById("email").value;
-          const password = document.getElementById("password").value;
+    document
+      .getElementById("loginForm")
+      .addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
 
-          try {
-            const response = await fetch("/login", {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify({ email, password }),
-            });
+        try {
+          const response = await fetch("/login", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ email, password }),
+          });
 
-            if (!response.ok) {
-              throw new Error("User not found");
-            }
-
-            const user = await response.json();
-
-            // Save user to local storage
-            localStorage.setItem("currentUser", JSON.stringify(user));
-
-            // Redirect to user-info page
-            window.location.href = "/";
-          } catch (error) {
-            alert("Sign-In Failed: " + error.message);
+          if (!response.ok) {
+            throw new Error("User not found");
           }
-        });
+
+          const user = await response.json();
+
+          // Save user to local storage
+          localStorage.setItem("currentUser", JSON.stringify(user));
+
+          // Redirect to user-info page
+          window.location.href = "/";
+        } catch (error) {
+          alert("Sign-In Failed: " + error.message);
+        }
+      });
   </script>
 </html>
