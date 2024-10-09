@@ -5,83 +5,84 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-    <style>
-        body {
-          width: 40vw;
-          height: auto;
-          /* object-fit:cover; */
-          background: url(https://images.unsplash.com/photo-1507525428034-b723cf961d3e?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3);
-          background-size:auto;
-          filter: drop-shadow(0 0 0.75rem rgba(0, 0, 0, 0.515));
-          /* background-repeat: repeat; */
-          /* background-size: 100%; */
-          margin: auto;
-        }
-        input[type="email"],
-        input[type="password"] {
-          padding: 12px 20px;
-          margin: 10px 0;
-          display: inline-block;
-          /* border: 1px solid #e0e0e0; */
-          box-sizing: border-box;
-          width: 30vw;
-          min-width: 10vw;
-          height: auto;
-      }
-      footer {
-        flex-wrap: wrap;
-        justify-content: center;
-        margin: 25;
-      }
-      span {
-        text-align: center;
-        background-color: white;
-        border-radius: 20px;
-        /* width: 50vw;
+  <style>
+    body {
+      width: 40vw;
+      height: auto;
+      /* object-fit:cover; */
+      background: url(https://images.unsplash.com/photo-1507525428034-b723cf961d3e?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3);
+      background-size: auto;
+      filter: drop-shadow(0 0 0.75rem rgba(0, 0, 0, 0.515));
+      /* background-repeat: repeat; */
+      /* background-size: 100%; */
+      margin: auto;
+    }
+    input[type="email"],
+    input[type="password"] {
+      padding: 12px 20px;
+      margin: 10px 0;
+      display: inline-block;
+      /* border: 1px solid #e0e0e0; */
+      box-sizing: border-box;
+      width: 30vw;
+      min-width: 10vw;
+      height: auto;
+    }
+    footer {
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 25;
+    }
+    span {
+      text-align: center;
+      background-color: white;
+      border-radius: 20px;
+      /* width: 50vw;
         height: auto; */
-      }
+    }
 
-      button {
-        background-color: #c7c7c7;
-        color: white;
-        padding: 14px 20px;
-        margin: 8px 0;
-        border: none;
-        cursor: pointer;
-        /* width: 100%; */
-        width: 30vw;
-        min-width: 10vw;
-        height: auto;
-      }
-      span.psw {
-        text-align: center;
-        color: red;
-      }
+    button {
+      background-color: #c7c7c7;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      /* width: 100%; */
+      width: 30vw;
+      min-width: 10vw;
+      height: auto;
+    }
+    span.psw {
+      text-align: center;
+      color: red;
+    }
 
-      button:hover {
-        opacity: 0.8;
-      }
-      form {
-        padding: 10%;
+    button:hover {
+      opacity: 0.8;
+    }
+    form {
+      padding: 10%;
 
-        border-radius: 30px;
+      border-radius: 30px;
 
-        background-color: rgba(255, 255, 255, 0.918);
+      background-color: rgba(255, 255, 255, 0.918);
 
-        /* position: absolute; */
+      /* position: absolute; */
 
-        /* left: 50%;
+      /* left: 50%;
         top: 50%; */
 
-        margin-top: 150px;
-        justify-content: center;
-        align-items: center;
-        width: 30vw;
-        min-width: 30vw;
-        max-width: 10vw;
-      }
+      margin-top: 150px;
+      justify-content: center;
+      align-items: center;
+      width: 30vw;
+      min-width: 30vw;
+      max-width: 10vw;
+      text-align: center;
+    }
 
-      /* @media screen and (max-width: 300px) {
+    /* @media screen and (max-width: 300px) {
         span.psw {
           display: block;
           float: none;
@@ -97,35 +98,54 @@
       @media screen and (min-width: 622px) {
         body {
           width: 622px; /* 1 column by default */
-    </style>
+
+    #myImage {
+      transition: transform 0.2s ease;
+      cursor: pointer;
+      margin: auto;
+    }
+
+    .hop {
+      transform: translateY(-20px);
+    }
+  </style>
   <body>
-    
     <form action="/login" method="POST">
-      <h1 id="title" style="text-align: center;">Sign in</h1>
+      <img
+        id="myImage"
+        src="https://www.pngkit.com/png/full/518-5186670_login-icon-login-signup-icon-png.png"
+        width="100px"
+        alt="Hopping Image"
+      />
+      <h1 id="title" style="text-align: center">Sign in</h1>
       <label for="email"><b> Email </b></label>
-      <br>
+      <br />
       <input
         type="email"
         id="email"
         placeholder="@gmail.com"
         name="email"
+        minlength="8"
+        maxlength="20"
         required
       />
-      <br>
+      <br />
 
       <label for="password"> <b>Password</b> </label>
-      <br>
+      <br />
       <input
         type="password"
         id="password"
         placeholder="**************"
         name="password"
+        minlength="8"
+        maxlength="20"
         required
       />
 
       <button type="submit">Sign in</button>
       <footer>
-        <br>
+        <br />
         <b>
           <span class="createnewa"
             >Create<a href="/signIn"> Account </a></span
@@ -139,6 +159,15 @@
     <div class="container"></div>
   </body>
   <script>
+    const image = document.getElementById("myImage");
+
+    image.addEventListener("click", () => {
+      image.classList.add("hop");
+
+      setTimeout(() => {
+        image.classList.remove("hop");
+      }, 1000); // Adjust time as needed
+    });
     async function fetchUsers() {
       try {
         const response = await fetch("/users");
