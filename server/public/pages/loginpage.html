@@ -110,7 +110,7 @@
     }
   </style>
   <body>
-    <form action="/login" method="POST">
+    <form action="/login" id="loginForm" method="POST">
       <img
         id="myImage"
         src="https://www.pngkit.com/png/full/518-5186670_login-icon-login-signup-icon-png.png"
@@ -187,5 +187,36 @@
         console.error(error);
       }
     }
+     document
+        .getElementById("loginForm")
+        .addEventListener("submit", async (e) => {
+          e.preventDefault();
+          const email = document.getElementById("email").value;
+          const password = document.getElementById("password").value;
+
+          try {
+            const response = await fetch("/login", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({ email, password }),
+            });
+
+            if (!response.ok) {
+              throw new Error("User not found");
+            }
+
+            const user = await response.json();
+
+            // Save user to local storage
+            localStorage.setItem("currentUser", JSON.stringify(user));
+
+            // Redirect to user-info page
+            window.location.href = "/";
+          } catch (error) {
+            alert("Sign-In Failed: " + error.message);
+          }
+        });
   </script>
 </html>
