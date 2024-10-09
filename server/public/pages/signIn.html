@@ -4,59 +4,68 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <style> 
-
-    
+    <style>
       body {
-        background: url(https://img.freepik.com/free-vector/shiny-green-heartbeat-pulse-electrocardiogram-design-creative-background-health-medical-concept_1302-5649.jpg);
-        object-fit: cover;
-        background-repeat:  repeat;
-        background-size: 100%;
-
+        width: 40vw;
+        height: auto;
+        /* object-fit:cover; */
+        background: url(https://images.unsplash.com/photo-1507525428034-b723cf961d3e?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3);
+        background-size: auto;
+        filter: drop-shadow(0 0 0.75rem rgba(0, 0, 0, 0.515));
+        /* background-repeat: repeat; */
+        /* background-size: 100%; */
         margin: auto;
       }
       input[type="email"],
       input[type="password"] {
-        width: 100%;
         padding: 12px 20px;
-        margin: 16px 0;
+        margin: 10px 0;
         display: inline-block;
-        border: 1px solid #ccc;
+        /* border: 1px solid #e0e0e0; */
         box-sizing: border-box;
+        width: 30vw;
+        min-width: 10vw;
+        height: auto;
       }
       footer {
+        flex-wrap: wrap;
         justify-content: center;
         margin: 25;
       }
-
       span {
         text-align: center;
         background-color: white;
         border-radius: 20px;
+        /* width: 50vw;
+        height: auto; */
       }
 
       button {
-        background-color: #04aa6d;
+        background-color: #c7c7c7;
         color: white;
         padding: 14px 20px;
         margin: 8px 0;
         border: none;
         cursor: pointer;
-        width: 100%;
+        /* width: 100%; */
+        width: 30vw;
+        min-width: 10vw;
+        height: auto;
       }
       span.psw {
-        margin: 125px;
+        text-align: center;
+        color: red;
       }
 
       button:hover {
         opacity: 0.8;
       }
       form {
-        padding: 50px;
+        padding: 10%;
 
         border-radius: 30px;
 
-        background-color: lightgrey;
+        background-color: rgba(255, 255, 255, 0.918);
 
         /* position: absolute; */
 
@@ -66,30 +75,33 @@
         margin-top: 150px;
         justify-content: center;
         align-items: center;
+        width: 30vw;
+        min-width: 30vw;
+        max-width: 10vw;
+        text-align: center;
       }
 
-      @media screen and (max-width: 300px) {
-        span.psw {
-          display: block;
-          float: none;
-        }
+      #myImage {
+        transition: transform 0.2s ease;
+        cursor: pointer;
+        margin: auto;
       }
 
-      @media screen and (max-width: 650px) {
-        form {
-          display: block;
-          float: none;
-        }
-      }
-      @media screen and (min-width: 622px) {
-        body {
-          width: 622px; /* 1 column by default */
-        }
+      .hop {
+        transform: translateY(-20px);
       }
     </style>
   </head>
   <body>
     <form action="/submit-make" id="newAccount" method="POST">
+      <img
+        id="myImage"
+        src="https://www.pngkit.com/png/full/518-5186670_login-icon-login-signup-icon-png.png"
+        width="100px"
+        alt="Hopping Image"
+      />
+
+      <h1 id="title" style="text-align: center">Log in</h1>
       <label for="email"><b> Email </b></label>
       <input
         type="email"
@@ -105,18 +117,16 @@
         type="password"
         id="password"
         placeholder="Enter Password"
-        name="password" 
-        minlength = "8"
-        maxlength = "20"
+        name="password"
+        minlength="8"
+        maxlength="20"
         required
       />
 
       <button type="submit">Create Account</button>
       <footer>
         <b>
-          <span class="createnewa"
-            ><a href="/loginPage"> Login </a></span
-          ></b
+          <span class="createnewa"><a href="/loginPage"> Login </a></span></b
         >
         <b>
           <span class="psw">Forgot <a href="/user">password?</a></span></b
@@ -126,6 +136,14 @@
     <div class="container"></div>
   </body>
   <script>
+    image.addEventListener("click", () => {
+      image.classList.add("hop");
+
+      setTimeout(() => {
+        image.classList.remove("hop");
+      }, 1000); // Adjust time as needed
+    });
+
     async function fetchUsers() {
       try {
         const response = await fetch("/users");
@@ -138,8 +156,8 @@
         // there could be an error parsing the response
         // console.log(users);
         return users;
-        window.alert("You have created a new Account! Now please sign in.")
-        window.location.href = '/loginPage';
+        window.alert("You have created a new Account! Now please sign in.");
+        window.location.href = "/loginPage";
       } catch (error) {
         console.error("There was a problem");
         console.error(error);
