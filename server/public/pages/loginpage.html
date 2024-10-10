@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+    <style>
+        body {
+          width: 40vw;
+          height: auto;
+          /* object-fit:cover; */
+          background: url(https://images.unsplash.com/photo-1507525428034-b723cf961d3e?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3);
+          background-size:auto;
+          filter: drop-shadow(0 0 0.75rem rgba(0, 0, 0, 0.515));
+          /* background-repeat: repeat; */
+          /* background-size: 100%; */
+          margin: auto;
+        }
+        input[type="email"],
+        input[type="password"] {
+          padding: 12px 20px;
+          margin: 10px 0;
+          display: inline-block;
+          /* border: 1px solid #e0e0e0; */
+          box-sizing: border-box;
+          width: 30vw;
+          min-width: 10vw;
+          height: auto;
+      }
+      footer {
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 25;
+      }
+      span {
+        text-align: center;
+        background-color: white;
+        border-radius: 20px;
+        /* width: 50vw;
+        height: auto; */
+      }
+
+      button {
+        background-color: #c7c7c7;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        /* width: 100%; */
+        width: 30vw;
+        min-width: 10vw;
+        height: auto;
+      }
+      span.psw {
+        text-align: center;
+        color: red;
+      }
+
+      button:hover {
+        opacity: 0.8;
+      }
+      form {
+        padding: 10%;
+
+        border-radius: 30px;
+
+        background-color: rgba(255, 255, 255, 0.918);
+
+        /* position: absolute; */
+
+        /* left: 50%;
+        top: 50%; */
+
+        margin-top: 150px;
+        justify-content: center;
+        align-items: center;
+        width: 30vw;
+        min-width: 30vw;
+        max-width: 10vw;
+      }
+
+      /* @media screen and (max-width: 300px) {
+        span.psw {
+          display: block;
+          float: none;
+        }
+      }
+
+      @media screen and (max-width: 650px) {
+        form {
+          display: block;
+          float: none;
+        }
+      }
+      @media screen and (min-width: 622px) {
+        body {
+          width: 622px; /* 1 column by default */
+    </style>
+  <body>
+    
+    <form action="/login" method="POST">
+      <h1 id="title" style="text-align: center;">Sign in</h1>
+      <label for="email"><b> Email </b></label>
+      <br>
+      <input
+        type="email"
+        id="email"
+        placeholder="@gmail.com"
+        name="email"
+        required
+      />
+      <br>
+
+      <label for="password"> <b>Password</b> </label>
+      <br>
+      <input
+        type="password"
+        id="password"
+        placeholder="**************"
+        name="password"
+        required
+      />
+
+      <button type="submit">Sign in</button>
+      <footer>
+        <br>
+        <b>
+          <span class="createnewa"
+            >Create<a href="/signIn"> Account </a></span
+          ></b
+        >
+        <b>
+          <span class="psw">Forgot <a href="/user">password?</a></span></b
+        >
+      </footer>
+    </form>
+    <div class="container"></div>
+  </body>
+  <script>
+    async function fetchUsers() {
+      try {
+        const response = await fetch("/users");
+        if (!response.ok) {
+          throw new Error("Error fetching users. Response not ok");
+        }
+        // there could be an error getting response/fetching the endpoint
+        console.log(response);
+        const users = await response.json();
+        // there could be an error parsing the response
+        // console.log(users);
+        return users;
+      } catch (error) {
+        console.error("There was a problem");
+        console.error(error);
+      }
+    }
+  </script>
+</html>
